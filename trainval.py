@@ -183,9 +183,9 @@ def trainval(exp_dict, savedir, args):
             score_dict.update(score)
             
             # # visualize
-            # vis_loader_val = DataLoader(val_set, sampler=ut.SubsetSampler(val_set, indices=[0, 2, 4, 10, 12, 25]),
-            #                             batch_size=1)
-            # model.vis_on_loader(vis_loader_val, savedir=os.path.join(savedir, "val_images"))
+            vis_loader_val = DataLoader(val_set, sampler=ut.SubsetSampler(val_set, indices=[0, 2, 4, 10, 12, 25]),
+                                        batch_size=1)
+            model.vis_on_loader(vis_loader_val, savedir=os.path.join(savedir, "val_images"))
             
         # Train on source dataset with a domain shift, with optional domain adaptation (no active learning)
         elif args.domain_shift:
@@ -216,9 +216,9 @@ def trainval(exp_dict, savedir, args):
             score_dict.update(score)
          
             # visualize
-            # vis_loader_val = DataLoader(target_val_set, sampler=ut.SubsetSampler(target_val_set, indices=[0, 2, 4, 10, 12, 25]),
-            #                             batch_size=1)
-            # model.vis_on_loader(vis_loader_val, savedir=os.path.join(savedir, "val_images"))
+            vis_loader_val = DataLoader(target_val_set, sampler=ut.SubsetSampler(target_val_set, indices=[0, 2, 4, 10, 12, 25]),
+                                        batch_size=1)
+            model.vis_on_loader(vis_loader_val, savedir=os.path.join(savedir, "val_images"))
         
         # Train on entire source dataset (base case)
         else:
@@ -236,9 +236,9 @@ def trainval(exp_dict, savedir, args):
             score_dict.update(score)
             
             # visualize on validation set
-            # vis_loader_val = DataLoader(val_set, sampler=ut.SubsetSampler(val_set, indices=[0, 2, 4, 10, 12, 25]),
-            #                             batch_size=1)
-            # model.vis_on_loader(vis_loader_val, savedir=os.path.join(savedir, "val_images"))
+            vis_loader_val = DataLoader(val_set, sampler=ut.SubsetSampler(val_set, indices=[0, 2, 4, 10, 12, 25]),
+                                        batch_size=1)
+            model.vis_on_loader(vis_loader_val, savedir=os.path.join(savedir, "val_images"))
         
         # visualize on test set
         vis_loader_test = DataLoader(test_set, sampler=ut.SubsetSampler(test_set, indices=[0, 10, 12, 13, 15]),
