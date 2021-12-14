@@ -1,5 +1,4 @@
 Name: Simona Aksman
-SID: 3037441979	
 Email: saksman@berkeley.edu
 Link to webpage submission: https://inst.eecs.berkeley.edu/~cs194-26/fa21/upload/files/projFinalProposed/cs194-26-adb/
 Source code: https://github.com/saksman/deepfish_adaptation
